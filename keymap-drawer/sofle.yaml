@@ -37,22 +37,22 @@ layers:
   - DOWN
   - UP
   - RIGHT
+  - (
   - )
-  - '|'
   - {t: ▽, type: trans}
-  - '='
-  - '-'
-  - KP PLUS
-  - '{'
-  - '}'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '['
   - ']'
-  - ;
-  - ':'
+  - '{'
+  - '}'
   - \
-  - {t: ▽, type: trans}
+  - '|'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -290,7 +290,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - RGB TOG
-  - {t: ▽, type: trans}
+  - '&studio_unlock'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

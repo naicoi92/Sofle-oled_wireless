@@ -49,7 +49,7 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp F15 F14>,
+                <&inc_dec_kp F14 F15>,
                 <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 

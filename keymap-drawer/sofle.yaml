@@ -1,9 +1,8 @@
 layout: {zmk_keyboard: sofle}
 layers:
-  main: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', BACKSPACE, TAB, Q, W, E, R, T, Y, U, I, O, P, \, CAPS, A, S, D, F, G, H, J, K, L, ;, '''', LSHFT,
-    Z, X, C, V, B, MUTE, MUTE, N, M, ',', ., /, RSHFT, LALT, LGUI, LCTRL, lower, RET, SPACE, raise, RGUI, RALT, RCTRL]
+  main: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', BACKSPACE, TAB, Q, W, E, R, T, Y, U, I, O, P, \, ESC, A, S, D, F, G, H, J, K, L, ;, '''', LCTRL, Z,
+    X, C, V, B, MUTE, MUTE, N, M, ',', ., /, RSHFT, LALT, LGUI, LSHFT, lower, RET, SPACE, raise, control, control, control]
   lower:
-  - ESC
   - F1
   - F2
   - F3
@@ -15,6 +14,7 @@ layers:
   - F9
   - F10
   - F11
+  - F12
   - '`'
   - '1'
   - '2'
@@ -26,7 +26,7 @@ layers:
   - '8'
   - '9'
   - '0'
-  - F12
+  - ''
   - {t: ▽, type: trans}
   - '!'
   - '@'
@@ -77,11 +77,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - INS
+  - ''
   - PSCRN
   - CMENU
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - BRIGHTNESS INC
   - PG UP
   - {t: ▽, type: trans}
   - UP
@@ -89,11 +89,11 @@ layers:
   - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LALT
-  - LCTRL
-  - LSHFT
+  - ''
+  - ''
+  - ''
   - {t: ▽, type: trans}
-  - CLCK
+  - BRIGHTNESS DEC
   - PG DN
   - LEFT
   - DOWN
@@ -124,6 +124,67 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  control:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BRI DN
+  - BRI UP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   adjust:
   - BT CLR
   - {t: BT, h: '0'}
@@ -131,7 +192,7 @@ layers:
   - {t: BT, h: '2'}
   - {t: BT, h: '3'}
   - {t: BT, h: '4'}
-  - W
+  - ''
   - ''
   - ''
   - ''

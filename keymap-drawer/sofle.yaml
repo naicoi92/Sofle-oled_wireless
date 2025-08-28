@@ -307,3 +307,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+combos:
+- p: [31, 32]
+  k: ESCAPE

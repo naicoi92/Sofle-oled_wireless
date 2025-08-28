@@ -70,7 +70,7 @@ layers:
   - {t: BT, h: '2'}
   - {t: BT, h: '3'}
   - {t: BT, h: '4'}
-  - {t: ▽, type: trans}
+  - PG UP
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -82,9 +82,9 @@ layers:
   - CMENU
   - {t: ▽, type: trans}
   - BRIGHTNESS INC
-  - PG UP
+  - PG DN
   - {t: ▽, type: trans}
-  - UP
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -94,9 +94,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BRIGHTNESS DEC
-  - PG DN
-  - LEFT
-  - DOWN
+  - LEFT ARROW
+  - DOWN ARROW
+  - UP ARROW
   - RIGHT
   - DEL
   - BSPC

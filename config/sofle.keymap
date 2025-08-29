@@ -36,6 +36,22 @@
         };
     };
 
+    macros {
+        nvim_buffer_prev: nvim_buffer_prev {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp B>;
+            label = "NVIM_BUFFER_PREV";
+        };
+
+        nvim_buffer_next: nvim_buffer_next {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT_BRACKET &kp B>;
+            label = "NVIM_BUFFER_NEXT";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -109,11 +125,11 @@
 
         control {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans     &kp LPAR        &kp RPAR         &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &kp MINUS  &kp LBKT        &kp RBKT         &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans     &trans          &trans           &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                               &trans             &trans  &trans     &kp LPAR        &kp RPAR         &trans
+&trans  &trans  &trans  &trans  &trans  &trans                               &trans             &trans  &kp MINUS  &kp LBKT        &kp RBKT         &trans
+&trans  &trans  &trans  &trans  &trans  &nvim_buffer_prev                    &nvim_buffer_next  &trans  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans
+&trans  &trans  &trans  &trans  &trans  &trans             &trans    &trans  &trans             &trans  &trans     &trans          &trans           &trans
+                &trans  &trans  &trans  &trans             &trans    &trans  &trans             &trans  &trans     &trans
             >;
 
             label = "control";

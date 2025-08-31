@@ -23,7 +23,7 @@
 
         adjust_layer {
             if-layers = <1 2>;
-            then-layer = <5>;
+            then-layer = <4>;
         };
     };
 
@@ -50,6 +50,13 @@
             bindings = <&kp RIGHT_BRACKET &kp B>;
             label = "NVIM_BUFFER_NEXT";
         };
+
+        mac_unlock: mac_unlock {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N1 &kp N0 &kp N0 &kp N4 &kp N0 &kp N1 &kp N1 &kp ENTER>;
+            label = "MAC_UNLOCK";
+        };
     };
 
     keymap {
@@ -70,7 +77,7 @@
 &kp TAB    &kp Q   &kp W      &kp E     &kp R     &kp T                                &kp Y   &kp U   &kp I      &kp O    &kp P     &kp BACKSLASH
 &kp ESC    &kp A   &kp S      &kp D     &kp F     &kp G                                &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z   &kp X      &kp C     &kp V     &kp B   &kp C_AL_LOCK    &kp C_MUTE  &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                   &kp LCTRL  &kp LALT  &kp LGUI  &mo 1   &kp RET          &kp SPACE   &mo 2   &mo 3   &mo 4      &mo 3
+                   &kp LCTRL  &kp LALT  &kp LGUI  &mo 1   &kp RET          &kp SPACE   &mo 2   &mo 3   &mo 3      &mo 3
             >;
 
             sensor-bindings =
@@ -125,24 +132,14 @@
 
         control {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                               &trans             &trans  &trans     &kp LPAR        &kp RPAR         &trans
-&trans  &trans  &trans  &trans  &trans  &trans                               &trans             &trans  &kp MINUS  &kp LBKT        &kp RBKT         &trans
-&trans  &trans  &trans  &trans  &trans  &nvim_buffer_prev                    &nvim_buffer_next  &trans  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans
-&trans  &trans  &trans  &trans  &trans  &trans             &trans    &trans  &trans             &trans  &trans     &trans          &trans           &trans
-                &trans  &trans  &trans  &trans             &trans    &trans  &trans             &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                               &trans             &trans     &trans     &kp LPAR          &kp RPAR           &trans
+&trans  &trans  &trans  &trans  &trans  &trans                               &kp UNDERSCORE     &kp MINUS  &kp EQUAL  &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans
+&trans  &trans  &trans  &trans  &trans  &nvim_buffer_prev                    &nvim_buffer_next  &kp PLUS   &trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
+&trans  &trans  &trans  &trans  &trans  &trans             &trans    &trans  &trans             &trans     &trans     &trans            &trans             &trans
+                &trans  &trans  &trans  &trans             &trans    &trans  &trans             &trans     &trans     &trans
             >;
 
             label = "control";
-        };
-
-        layer_5 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans          &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &kp UNDERSCORE  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &kp EQUAL       &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans          &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans          &trans
-            >;
         };
 
         adjust_layer {
@@ -155,11 +152,21 @@
 
             label = "adjust";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                                        &trans  &trans  &trans  &trans  &trans  &trans
-&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF                                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans             &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &trans           &trans           &trans                                              &trans  &trans  &trans  &trans  &trans  &trans
-&trans             &trans           &trans           &trans           &trans           &trans           &rgb_ug RGB_TOG    &studio_unlock  &trans  &trans  &trans  &trans  &trans  &trans
-                                    &trans           &trans           &trans           &trans           &trans             &trans          &trans  &trans  &trans  &trans
+&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                                     &trans  &trans  &trans  &trans  &trans  &trans
+&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans             &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &trans           &trans           &trans                                           &trans  &trans  &trans  &trans  &trans  &trans
+&trans             &trans           &trans           &trans           &trans           &trans           &rgb_ug RGB_TOG    &mac_unlock  &trans  &trans  &trans  &trans  &trans  &trans
+                                    &trans           &trans           &trans           &trans           &trans             &trans       &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
